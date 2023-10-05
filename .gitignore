@@ -3,5 +3,35 @@
 /out/
 /CMakeSettings.json
 
-# Mac OS X rubbish
-.DS_Store
+# Visual Studio files
+.vs/
+**.sln
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
+
+# Linux files
+**.sh
+!Linux-GenProjects
+
+# Codelite files
+Makefile
+.build-debug/
+.build-release/
+.build-dist/
+.codelite/
+**.workspace
+**.mk
+**.project
+**.txt
+
+# MacOSX Files
+**.command
+**.sh
+
+# Xcode Files
+**.xcworkspace
+**.xcworkspacedata
+**.xcodeproj
+**.pbxproj
+**.DS_Store
