@@ -11,18 +11,14 @@ project "NFD"
 
 	filter "system:windows"
 		systemversion "latest"
-	  defines "_CRT_SECURE_NO_WARNINGS"
-  	files "src/nfd_win.cpp"
+		defines "_CRT_SECURE_NO_WARNINGS"
+		files "src/nfd_win.cpp"
 
 	filter "system:linux"
-		systemversion "latest"
-		pic "On"
-    files "src/nfd_portal.cpp"
+		files "src/nfd_portal.cpp"
 
 	filter "system:macosx"
-		systemversion "12.0"
-		pic "On"
-    files "src/nfd_cocoa.m"
+		files "src/nfd_cocoa.m"
 
 	filter "configurations:Debug"
 		defines "VE_DEBUG"
