@@ -6,8 +6,15 @@ project "NFD"
 	targetdir ("%{wks.location}/bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/%{prj.name}")
 
-	includedirs "%{wks.location}/Vulture/vendor/NFD/src/include"
-	files "src/**.h"
+	includedirs {
+
+		"src/include"
+	}
+
+	files {
+
+		"src/**.h"
+	}
 
 	filter "system:windows"
 		systemversion "latest"
@@ -15,6 +22,16 @@ project "NFD"
 		files "src/nfd_win.cpp"
 
 	filter "system:linux"
+
+		includedirs {
+
+			"/usr/include/dbus-1.0/",
+			"/usr/lib64/dbus-1.0/include/",
+			"/usr/include/glib-2.0/",
+			"/usr/lib64/glib-2.0/include/",
+			"/usr/lib/x86_64-linux-gnu/dbus-1.0/include/"
+		}
+
 		files "src/nfd_portal.cpp"
 
 	filter "system:macosx"
